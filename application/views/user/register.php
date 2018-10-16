@@ -84,6 +84,7 @@
                                             <span class="text-danger"><?php echo form_error('gender'); ?></span>
                                 </div>
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">register</button>
+                                <span class="text-danger"><?php echo $this->session->flashdata('error_msg'); ?></span>
                             </form>
                             <div class="register-link">
                                 <p>

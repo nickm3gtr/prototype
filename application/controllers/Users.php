@@ -94,6 +94,7 @@ class Users Extends CI_Controller {
 				redirect(base_url() . 'index.php/pages/home');
 			} else {
 
+				$this->session->set_flashdata('error_msg', 'Wrong email or password.');
 				$this->index();
 			}
 
