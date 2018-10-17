@@ -39,10 +39,10 @@
 								</tr>
 							</thead>
 							<tbody>
-							<?php foreach($account_titles as $account_title): ?>
+							<?php foreach($filter as $filters): ?>
 								<tr>
-									<td><?php echo $account_title['acct_name']; ?></td>
-									<td><?php echo $account_title['category_name']; ?></td>
+									<td><?php echo $filters['acct_name'];; ?></td>
+									<td><?php echo $filters['category_name']; ?></td>
 								</tr>
 							<?php endforeach; ?>
 							</tbody>
