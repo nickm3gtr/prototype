@@ -1,3 +1,13 @@
+<?php
+
+    $user_email = $this->session->userdata('email');
+
+    if($user_email) {
+        redirect(base_url() . 'index.php/pages/dashboard');
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +46,7 @@
 </head>
 
 <body class="animsition">
-    <div class="page-wrapper">
+    <div class="page-content--bge5">
         <div class="page-content--bge5">
             <div class="container">
                 <div class="login-wrap">
@@ -75,13 +85,13 @@
                                 </div>
                                 <div class="form-group">
                                                     <label>Select Gender</label>
-                                                    <div class="col-5">
-                                                    <select name="gender" id="select" class="form-control">
-                                                        <option value="Male">Male</option>
-                                                        <option value="Female">Female</option>
-                                                    </select>
-                                                </div>
-                                            <span class="text-danger"><?php echo form_error('gender'); ?></span>
+                                            <div class="col-5">
+                                                <select name="gender" id="select" class="form-control">
+                                                    <option value="Male">Male</option>
+                                                    <option value="Female">Female</option>
+                                                </select>
+                                            </div>
+                                        <span class="text-danger"><?php echo form_error('gender'); ?></span>
                                 </div>
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">register</button>
                                 <span class="text-danger"><?php echo $this->session->flashdata('error_msg'); ?></span>
@@ -97,8 +107,8 @@
                 </div>
             </div>
         </div>
-
     </div>
+
 
     <!-- Jquery JS-->
     <script src="<?php echo base_url(); ?>assets/vendor/jquery-3.2.1.min.js"></script>

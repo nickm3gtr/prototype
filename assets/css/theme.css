@@ -274,7 +274,7 @@ section {
 
 /*Page Objects*/
 .page-wrapper {
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .page-container {
@@ -323,7 +323,7 @@ section {
 
 .page-content--bge5 {
     background: #e5e5e5;
-    height: 100vh;
+    min-height: 200vh;
 }
 
 .login-wrap {

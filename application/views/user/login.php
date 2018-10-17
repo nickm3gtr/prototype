@@ -1,3 +1,12 @@
+<?php
+
+    $user_email = $this->session->userdata('email');
+
+    if($user_email) {
+        redirect(base_url() . 'index.php/pages/dashboard');
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
