@@ -71,7 +71,7 @@
                         </li>
                         <li>
                             <a href="<?php echo base_url(); ?>index.php/pages/account_titles">
-                                <i class="fas fa-chart-bar"></i>Account Titles</a>
+                                <i class="fas fa-th-list"></i>Account Titles</a>
                         </li>
                     </ul>
                 </div>
@@ -80,10 +80,10 @@
         <!-- END HEADER MOBILE-->
 
         <!-- MENU SIDEBAR-->
-        <aside class="menu-sidebar d-none d-lg-block">
+        <aside class="menu-sidebar2 d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="<?php echo base_url(); ?>assets/images/icon/logo.png" alt="Cool Admin" />
+                    <img src="<?php echo base_url(); ?>assets/images/icon/logo-white.png" alt="Cool Admin" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -95,7 +95,7 @@
                         </li>
                         <li>
                             <a href="<?php echo base_url(); ?>index.php/pages/account_titles">
-                                <i class="fas fa-chart-bar"></i>Account Titles</a>
+                                <i class="fas fa-list-alt"></i>Account Titles</a>
                         </li>
                     </ul>
                 </nav>

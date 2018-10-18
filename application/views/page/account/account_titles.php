@@ -48,7 +48,7 @@
 									</tbody>
 								</table>
 							</div>
-							<form action="" method="post">
+							<form action="<?php echo base_url() . 'index.php/pages/add_acctitle'; ?>" method="post">
 								<div class="form-group">
 									<div class="btn-group">
 										<button class="btn btn-success" type="submit">Add</button>

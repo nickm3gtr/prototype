@@ -19,7 +19,7 @@
 					                </div>
 					                <div class="form-group">
 					                    <label class=" form-control-label">Account Code</label>
-					                    <input type="text" id="nf-email" name="account_code" placeholder="Enter new account title" class="form-control">
+					                    <input type="text" id="nf-email" name="account_code" placeholder="Enter account code" class="form-control">
 					                </div>
 					                <div class="form-group">
 					                    <label class=" form-control-label">Account title</label>
@@ -27,7 +27,7 @@
 					                </div>   
 					        </div>
 					        <div class="card-footer">
-					            <button type="submit" class="btn btn-primary btn-sm">
+					            <button type="submit" class="btn btn-success btn-sm">
 					                <i class="fa fa-dot-circle-o"></i> Submit
 					            </button>
 					        </div>
