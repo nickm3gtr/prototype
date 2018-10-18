@@ -35,4 +35,9 @@
 			$query = $this->db->get();
 			return $query->result_array();
 		}
+
+		public function acctitle_insert($new_acctitle) {
+
+			$this->db->insert('account_titles', $new_acctitle);
+		}
 	}

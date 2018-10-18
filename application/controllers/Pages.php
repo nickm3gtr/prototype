@@ -25,7 +25,7 @@
 			$data['account_titles'] = $this->acctitle_model->account_titles();
 
 			$this->load->view('templates/header', $data);
-			$this->load->view('page/account_titles', $data);
+			$this->load->view('page/account/account_titles', $data);
 			$this->load->view('templates/footer');
 		}
 
@@ -37,8 +37,29 @@
 			$data['filter'] = $this->acctitle_model->category_filter($category);
 
 			$this->load->view('templates/header', $data);
-			$this->load->view('page/account_titles_filter', $data);
+			$this->load->view('page/account/account_titles_filter', $data);
 			$this->load->view('templates/footer');
 
+		}
+
+		public function add_acctitle() {
+
+			$data['categories'] = $this->acctitle_model->category_select();
+
+			$data['title'] = 'Add Account Title';
+			$this->load->view('templates/header', $data);
+			$this->load->view('page/account/add_acctitle', $data);
+			$this->load->view('templates/footer');
+		}
+
+		public function acctitle_insert() {
+
+			$new_acctitle = array(
+				'acct_code' => $this->input->post('account_code'),
+				'acct_name' => $this->input->post('account_title'),
+				'categoryID' => $this->input->post('category')
+			);
+			$this->acctitle_model->acctitle_insert($new_acctitle);
+			redirect('pages/account_titles');
 		}
 	}
