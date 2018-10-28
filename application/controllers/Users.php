@@ -123,4 +123,13 @@
 			$this->load->view('templates/footer');
 
 		}
+
+		public function profile_edit() {
+
+			$data['title'] = 'Edit Profile';
+
+			$this->load->view('templates/header', $data);
+			$this->load->view('user/edit_profile', $data);
+			$this->load->view('templates/footer');
+		}
 	}
