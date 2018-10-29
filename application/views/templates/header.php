@@ -70,6 +70,9 @@
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
                         <li>
+                            <a href="<?php echo base_url(); ?>index.php/transactions/clients"><i class="fas fa-users"></i>Clients</a>
+                        </li>
+                        <li>
                             <a href="<?php echo base_url(); ?>index.php/pages/account_titles">
                                 <i class="fas fa-th-list"></i>Account Titles</a>
                         </li>
@@ -92,6 +95,9 @@
                         <li>
                             <a href="<?php echo base_url(); ?>index.php/pages/dashboard">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>index.php/transactions/clients"><i class="fas fa-users"></i>Clients</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(); ?>index.php/pages/account_titles">
