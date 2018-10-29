@@ -32,7 +32,8 @@
 			$this->db->select('customerID, transDesc, transDate');
 			$this->db->from('transactions');
 			$this->db->where('customerID', $customerID);
-			$this->db->where('transdate BETWEEN', $date1);
+			$this->db->where('transdate >=', $date1);
+			$this->db->where('transdate <=', $date2);
 			$query = $this->db->get();
 			return $query->result_array();
 		}
