@@ -24,4 +24,16 @@
 			$query = $this->db->get_where('transactions', array('customerID' => $customerID));
 			return $query->result_array();
 		}
+
+		public function filter_trans($customerID, $month, $year) {
+
+			$date1 = $year .'-' .$month .'-01';
+			$date2 = $year .'-' .$month .'-31';
+			$this->db->select('customerID, transDesc, transDate');
+			$this->db->from('transactions');
+			$this->db->where('customerID', $customerID);
+			$this->db->where('transdate BETWEEN', $date1);
+			$query = $this->db->get();
+			return $query->result_array();
+		}
 	}

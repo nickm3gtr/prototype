@@ -13,7 +13,7 @@
 				<div class="col-md-9 offset-md-2">
                     <div class="card border border-secondary">
                         <div class="card-header">
-                            <form action="<?php echo base_url('index.php/pages/acctitle_check'); ?>" method="post">
+                            <form class="form-inline" action="<?php echo base_url('index.php/pages/acctitle_check'); ?>" method="post">
 								<div class="form-group">
 			                        <div class="col-lg-4">
 			                            <select name="category" id="select" class="form-control">

@@ -6,7 +6,7 @@
                     <div class="card border border-secondary">
                     	<div class="card-header">
                     		<strong class="card-title"><?php echo $clients['name'] . "'s " . $title; ?></strong><br><br>
-                    		<form class="form-inline" action="" method="post">
+                    		<form class="form-inline" action="<?php echo base_url('index.php/transactions/filter_transactions/' . $clients['customerID']); ?>" method="post">
 								<div class="form-group">
 			                        <div class="col col-md-4">
 			                            <select name="months" id="select" class="form-control">
