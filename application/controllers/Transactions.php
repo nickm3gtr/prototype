@@ -22,4 +22,13 @@
 			$this->load->view('transaction/view_transaction', $data);
 			$this->load->view('templates/footer');
 		}
+
+		public function filter_transactions($customerID = NULL) {
+
+			$data['clients'] = $this->transactions_model->get_client($customerID);
+			$data['title'] = "Transactions";
+			$this->load->view('templates/header', $data);
+			$this->load->view('transaction/view_transaction', $data);
+			$this->load->view('templates/footer');
+		}
 	}

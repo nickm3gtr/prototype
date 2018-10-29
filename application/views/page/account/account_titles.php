@@ -3,17 +3,14 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-9 offset-md-2">
-					<div class="overview-wrap">
-						<h2 class="title-3"><?php echo $title; ?></h2>
-						<br /><br>
-					</div>
 				</div>
 			</div>
 			<div class="row form-group">
 				<div class="col-md-9 offset-md-2">
                     <div class="card border border-secondary">
                         <div class="card-header">
-                            <form action="<?php echo base_url('index.php/pages/acctitle_check'); ?>" method="post">
+                        	<strong class="card-title"><?php echo $title; ?></strong><br><br>
+                            <form class="form-inline" action="<?php echo base_url('index.php/pages/acctitle_check'); ?>" method="post">
 								<div class="form-group">
 			                        <div class="col-lg-4">
 			                            <select name="category" id="select" class="form-control">
