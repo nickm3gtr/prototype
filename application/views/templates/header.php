@@ -66,15 +66,18 @@
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
                         <li>
-                            <a class="js-arrow" href="<?php echo base_url(); ?>index.php/pages/dashboard">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                            <a class="js-arrow" href="<?php echo base_url(); ?>index.php/dashboard/index">
+                                <i class="fas fa-desktop"></i>Dashboard</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(); ?>index.php/transactions/clients"><i class="fas fa-users"></i>Clients</a>
+                            <a href="<?php echo base_url(); ?>index.php/chart_of_accounts/account_titles">
+                                <i class="fas fa-th-list"></i>Chart of Accounts</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(); ?>index.php/pages/account_titles">
-                                <i class="fas fa-th-list"></i>Account Titles</a>
+                            <a href="<?php echo base_url(); ?>index.php/clients/clients"><i class="fas fa-users"></i>Clients</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>index.php/transactions/clients"><i class="fas fa-credit-card"></i>Transactions</a>
                         </li>
                     </ul>
                 </div>
@@ -92,16 +95,19 @@
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                        <li>
-                            <a href="<?php echo base_url(); ?>index.php/pages/dashboard">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                       <li>
+                            <a class="js-arrow" href="<?php echo base_url(); ?>index.php/dashboard/index">
+                                <i class="fas fa-desktop"></i>Dashboard</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(); ?>index.php/transactions/clients"><i class="fas fa-users"></i>Clients</a>
+                            <a href="<?php echo base_url(); ?>index.php/chart_of_accounts/account_titles">
+                                <i class="fas fa-th-list"></i>Chart of Accounts</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(); ?>index.php/pages/account_titles">
-                                <i class="fas fa-list-alt"></i>Account Titles</a>
+                            <a href="<?php echo base_url(); ?>index.php/clients/clients"><i class="fas fa-users"></i>Clients</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>index.php/transactions/clients"><i class="fas fa-credit-card"></i>Transactions</a>
                         </li>
                     </ul>
                 </nav>
@@ -175,7 +181,7 @@
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
                                                 <div class="image">
-                                                    <a href="#">
+                                                    <a href="<?php echo base_url() . 'index.php/users/profile_view'; ?>">
                                                         <img src="<?php echo base_url(); ?>assets/images/icon/<?php echo strtolower($this->session->userdata('gender')) . '-unknown-avatar.jpg'; ?>" alt="<?php echo $this->session->userdata('firstname') . ' ' . $this->session->userdata('lastname'); ?>" />
                                                     </a>
                                                 </div>

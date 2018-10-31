@@ -12,6 +12,7 @@
 			$this->db->select('*');
 			$this->db->from('account_titles');
 			$this->db->join('categories', 'categories.categoryID = account_titles.categoryID', 'inner');
+			$this->db->order_by('account_titles.categoryID');
 			$query = $this->db->get();
 
 			return $query->result_array();

@@ -14,8 +14,8 @@
                         <div class="location text-sm-center">                    
                             <i class="fa fa-<?php echo strtolower($user_info['gender']); ?>"></i> <?php echo $user_info['gender']; ?></div><br>
                             <form action="<?php echo base_url() . 'index.php/users/profile_edit'; ?>" method="post">
-                                <button type="submit" class="btn btn-success btn-sm col-sm-6 offset-sm-3">
-                                    <i class="fa fa-dot-circle-o"></i> Edit Profile
+                                <button type="submit" class="btn btn-success btn col-sm-6 offset-sm-3">
+                                    <i class="fas fa-pencil-square"></i> Edit Profile
                            </form>
                         </div>                
                         <hr>

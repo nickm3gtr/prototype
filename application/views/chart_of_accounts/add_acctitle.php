@@ -7,7 +7,7 @@
 				        <div class="card-header">
 				            <strong>Add</strong> Account Title
 				        </div>
-				        <form action="<?php echo base_url() . 'index.php/pages/acctitle_insert'; ?>" method="post">
+				        <form action="<?php echo base_url() . 'index.php/chart_of_accounts/acctitle_insert'; ?>" method="post">
 					        <div class="card-body card-block">
 					                <div class="form-group">
 					                    	<label class=" form-control-label">Category</label>

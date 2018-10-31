@@ -3,14 +3,17 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-9 offset-md-2">
+					<div class="overview-wrap">
+						<h2 class="title-3"><?php echo $title; ?></h2>
+						<br /><br>
+					</div>
 				</div>
 			</div>
 			<div class="row form-group">
 				<div class="col-md-9 offset-md-2">
                     <div class="card border border-secondary">
                         <div class="card-header">
-                        	<strong class="card-title"><?php echo $title; ?></strong><br><br>
-                            <form class="form-inline" action="<?php echo base_url('index.php/pages/acctitle_check'); ?>" method="post">
+                            <form class="form-inline" action="<?php echo base_url('index.php/Chart_of_accounts/acctitle_filter'); ?>" method="post">
 								<div class="form-group">
 			                        <div class="col-lg-4">
 			                            <select name="category" id="select" class="form-control">
@@ -36,16 +39,16 @@
 										</tr>
 									</thead>
 									<tbody>
-									<?php foreach($account_titles as $account_title): ?>
-										<tr>
-											<td><?php echo $account_title['acct_name']; ?></td>
-											<td><?php echo $account_title['category_name']; ?></td>
-										</tr>
-									<?php endforeach; ?>
+										<?php foreach($filter as $filters): ?>
+											<tr>
+												<td><?php echo $filters['acct_name'];; ?></td>
+												<td><?php echo $filters['category_name']; ?></td>
+											</tr>
+								<?php endforeach; ?>
 									</tbody>
 								</table>
 							</div>
-							<form action="<?php echo base_url() . 'index.php/pages/add_acctitle'; ?>" method="post">
+							<form action="<?php echo base_url() . 'index.php/chart_of_accounts/add_acctitle'; ?>" method="post">
 								<div class="form-group">
 									<div class="btn-group">
 										<button class="btn btn-success" type="submit">Add</button>
@@ -55,6 +58,7 @@
 	                    </div>
                 </div>
             </div>
+
 		</div>
 	</div>
 </div>

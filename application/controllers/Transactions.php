@@ -4,7 +4,7 @@
 
 		public function clients() {
 
-			$data['title'] = 'Clients';
+			$data['title'] = 'Select Client';
 			$data['clients'] = $this->transactions_model->clients_select();
 
 			$this->load->view('templates/header', $data);
