@@ -82,7 +82,6 @@
 
 					$session_data  = $this->user_model->login_user($result['email'], $result['password']);
 					$this->session->set_userdata($session_data);
-					//print_r($session_data);
 					redirect(base_url() . 'index.php/dashboard/index');
 				} else {
 

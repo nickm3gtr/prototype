@@ -1,9 +1,9 @@
 <?php
 
-    $user_email = $this->session->userdata('email');
+    $customer_email = $this->session->userdata('cust_email');
 
-    if($user_email) {
-        redirect(base_url() . 'index.php/dashboard/index');
+    if($customer_email) {
+        redirect(base_url() . 'index.php/dashboard/customer_dashboard');
     }
 
 ?>
@@ -19,7 +19,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Login</title>
+    <title>Register</title>
 
     <!-- Fontfaces CSS-->
     <link href="<?php echo base_url(); ?>assets/css/font-face.css" rel="stylesheet" media="all">
@@ -45,7 +45,7 @@
 </head>
 
 <body class="animsition">
-    <div class="page-wrapper">
+    <div class="page-content--bge5">
         <div class="page-content--bge5">
             <div class="container">
                 <div class="login-wrap">
@@ -56,7 +56,17 @@
                             </a>
                         </div>
                         <div class="login-form">
-                            <form action="<?php echo base_url('index.php/users/login_validation'); ?>" method="post">
+                            <form action="<?php echo base_url('index.php/customers/signup_validation'); ?>" method="post">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <input class="au-input au-input--full" type="text" name="firstname" placeholder="Username">
+                                    <span class="text-danger"><?php echo form_error('firstname'); ?></span>
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input class="au-input au-input--full" type="text" name="lastname" placeholder="Username">
+                                    <span class="text-danger"><?php echo form_error('lastname'); ?></span>
+                                </div>
                                 <div class="form-group">
                                     <label>Email Address</label>
                                     <input class="au-input au-input--full" type="email" name="email" placeholder="Email">
@@ -67,14 +77,28 @@
                                     <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
                                     <span class="text-danger"><?php echo form_error('password'); ?></span>
                                 </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
-                                <span class="text-success"><?php echo $this->session->flashdata('success_msg'); ?></span>
+                                <div class="form-group">
+                                    <label>Confirm Password</label>
+                                    <input class="au-input au-input--full" type="password" name="repassword" placeholder="Confirm Password">
+                                    <span class="text-danger"><?php echo form_error('repassword'); ?></span>
+                                </div>
+                                <div class="form-group">
+                                                    <label>Select Gender</label>
+                                            <div class="col-5">
+                                                <select name="gender" id="select" class="form-control">
+                                                    <option value="Male">Male</option>
+                                                    <option value="Female">Female</option>
+                                                </select>
+                                            </div>
+                                        <span class="text-danger"><?php echo form_error('gender'); ?></span>
+                                </div>
+                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">register</button>
                                 <span class="text-danger"><?php echo $this->session->flashdata('error_msg'); ?></span>
                             </form>
                             <div class="register-link">
                                 <p>
-                                    Don't have an account?
-                                    <a class="text-success" href="<?php echo base_url(); ?>index.php/users/register">Sign Up Here</a>
+                                    Already have account?
+                                    <a class="text-success" href="<?php echo base_url(); ?>index.php/customer/index">Sign In</a>
                                 </p>
                             </div>
                         </div>
@@ -82,8 +106,8 @@
                 </div>
             </div>
         </div>
-
     </div>
+
 
     <!-- Jquery JS-->
     <script src="<?php echo base_url(); ?>assets/vendor/jquery-3.2.1.min.js"></script>

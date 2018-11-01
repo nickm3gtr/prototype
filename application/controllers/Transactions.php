@@ -95,7 +95,8 @@
 				$this->session->set_flashdata('unbalanced', 'Unbalanced debit and credit!');
 				redirect('transactions/journal_transactions/' . $debit['transID'], 'refresh');
 			} else {
-
+				$transID=$debit['transID'];
+				$this->transactions_model->update_status($transID);
 				$this->transactions_model->add_journal($debit, $credit);
 				redirect('transactions/journal_result/' . $debit['transID']);
 			}

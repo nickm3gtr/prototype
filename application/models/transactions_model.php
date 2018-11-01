@@ -53,6 +53,13 @@
 			return $query->row_array();
 		}
 
+		public function update_status($transID) {
+
+			$this->db->set('trans_status', 'journalized');
+			$this->db->where('transID', $transID);
+			$this->db->update('transactions');
+		}
+
 		public function add_journal($debit, $credit) {
 			$this->db->insert('debits', $debit);
 			$this->db->insert('credits', $credit);

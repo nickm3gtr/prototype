@@ -17,7 +17,7 @@
 	          		<p><?php echo "Transaction: " . $transactions['transDesc']; ?></p>
 	          		<p><?php echo "Amount: Php " . $transactions['transAmount']; ?></p>
 	          		<br>
-                        <strong class="text-center">Input Debit</strong>
+                        <strong class="text-center">Debit</strong>
                         <?php
                         	$debit_data = array(
 									        'debit_transID'  => $transactions['transID'],
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         <br>
-                        <strong class="text-center">Input Credit</strong>
+                        <strong class="text-center">Credit</strong>
                        	<?php
                         	$credit_data = array(
 									        'credit_transID'  => $transactions['transID'],

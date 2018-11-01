@@ -1,9 +1,9 @@
 <?php
 
-    $user_email = $this->session->userdata('email');
+    $customer_email = $this->session->userdata('cust_email');
 
-    if($user_email) {
-        redirect(base_url() . 'index.php/dashboard/index');
+    if($customer_email) {
+        redirect(base_url() . 'index.php/dashboard/customer_dashboard');
     }
 
 ?>
@@ -56,7 +56,7 @@
                             </a>
                         </div>
                         <div class="login-form">
-                            <form action="<?php echo base_url('index.php/users/login_validation'); ?>" method="post">
+                            <form action="<?php echo base_url('index.php/customers/login_validation'); ?>" method="post">
                                 <div class="form-group">
                                     <label>Email Address</label>
                                     <input class="au-input au-input--full" type="email" name="email" placeholder="Email">
@@ -74,7 +74,7 @@
                             <div class="register-link">
                                 <p>
                                     Don't have an account?
-                                    <a class="text-success" href="<?php echo base_url(); ?>index.php/users/register">Sign Up Here</a>
+                                    <a class="text-success" href="<?php echo base_url(); ?>index.php/customer/register">Sign Up Here</a>
                                 </p>
                             </div>
                         </div>
