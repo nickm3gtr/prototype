@@ -8,7 +8,7 @@
 			$this->load->model('Clients_model');
 		}
 
-		public function clients() {
+		public function clients_list() {
 
 			$data['title'] = 'Clients';
 			$data['clients'] = $this->clients_model->clients_select();

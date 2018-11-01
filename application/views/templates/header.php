@@ -77,7 +77,7 @@
                             <a href="<?php echo base_url(); ?>index.php/clients/clients"><i class="fas fa-users"></i>Clients</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(); ?>index.php/transactions/clients"><i class="fas fa-credit-card"></i>Transactions</a>
+                            <a href="<?php echo base_url(); ?>index.php/transactions/clients_list"><i class="fas fa-credit-card"></i>Transactions</a>
                         </li>
                     </ul>
                 </div>
@@ -104,7 +104,7 @@
                                 <i class="fas fa-th-list"></i>Chart of Accounts</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(); ?>index.php/clients/clients"><i class="fas fa-users"></i>Clients</a>
+                            <a href="<?php echo base_url(); ?>index.php/clients/clients_list"><i class="fas fa-users"></i>Clients</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(); ?>index.php/transactions/clients"><i class="fas fa-credit-card"></i>Transactions</a>

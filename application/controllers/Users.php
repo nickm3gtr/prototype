@@ -16,20 +16,16 @@
 
 		public function signup_validation() {
 
-			$this->form_validation->set_rules('firstname', 'Firstname', 'required');
-			$this->form_validation->set_rules('lastname', 'Lastname', 'required');
-			$this->form_validation->set_rules('email', 'Email', 'required');
-			$this->form_validation->set_rules('password', 'Password', 'required');
-			$this->form_validation->set_rules('repassword', 'Confirm Password', 'required');
-			$this->form_validation->set_rules('gender', 'Gender', 'required');
+			$this->form_validation->set_rules('firstname', 'Firstname', 'trim|required');
+			$this->form_validation->set_rules('lastname', 'Lastname', 'trim|required');
+			$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+			$this->form_validation->set_rules('password', 'Password', 'trim|required');
+			$this->form_validation->set_rules('repassword', 'Confirm Password', 'trim|required|matches[password]');
+			$this->form_validation->set_rules('gender', 'Gender', 'trim|required');
 
 			if($this->form_validation->run()) {
 
-				$password = md5($this->input->post('password'));
-				$confirm_password = md5($this->input->post('repassword'));
-				 if($password == $confirm_password) {
-
-				 	$user = array(
+				$user = array(
 
 						'firstname' => $this->input->post('firstname'),
 						'lastname' => $this->input->post('lastname'),
@@ -38,10 +34,6 @@
 						'gender' => $this->input->post('gender'),
 
 					);
-				 } else {
-				 	$this->session->set_flashdata('error_msg', "Password doesn't match.");
-				 	redirect('users/register');
-				 }
 
 
 				$email_check = $this->user_model->email_check($user);
@@ -72,8 +64,8 @@
 
 		public function login_validation() {
 
-			$this->form_validation->set_rules('email', 'Email', 'required');
-			$this->form_validation->set_rules('password', 'Password' ,'required');
+			$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+			$this->form_validation->set_rules('password', 'Password' ,'trim|required');
 
 			if($this->form_validation->run()) {
 

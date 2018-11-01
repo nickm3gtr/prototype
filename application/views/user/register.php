@@ -99,7 +99,7 @@
                             <div class="register-link">
                                 <p>
                                     Already have account?
-                                    <a href="<?php echo base_url(); ?>index.php/users/index">Sign In</a>
+                                    <a class="text-success" href="<?php echo base_url(); ?>index.php/users/index">Sign In</a>
                                 </p>
                             </div>
                         </div>

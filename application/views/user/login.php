@@ -72,8 +72,8 @@
                             </form>
                             <div class="register-link">
                                 <p>
-                                    Don't you have account?
-                                    <a href="<?php echo base_url(); ?>index.php/users/register">Sign Up Here</a>
+                                    Don't have an account?
+                                    <a class="text-success" href="<?php echo base_url(); ?>index.php/users/register">Sign Up Here</a>
                                 </p>
                             </div>
                         </div>

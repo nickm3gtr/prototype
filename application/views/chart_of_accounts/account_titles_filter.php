@@ -11,7 +11,7 @@
 			</div>
 			<div class="row form-group">
 				<div class="col-md-9 offset-md-2">
-                    <div class="card border border-secondary">
+                    <div class="card">
                         <div class="card-header">
                             <form class="form-inline" action="<?php echo base_url('index.php/Chart_of_accounts/acctitle_filter'); ?>" method="post">
 								<div class="form-group">
