@@ -2,6 +2,11 @@
 
 	class Transactions_model extends CI_Model {
 
+		public function insert_transaction($transaction) {
+
+			$this->db->insert('transactions', $transaction);
+		}
+
 		public function clients_select() {
 
 			$this->db->select('customerID, CONCAT(cust_lname, ", ", cust_fname) AS name, cust_email');

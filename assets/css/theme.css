@@ -4218,6 +4218,10 @@ section {
     margin: 0;
 }
 
+.table-responsive.table--no-card td.text-indent {
+    margin-left: 50px;
+}
+
 .table-responsive.table--no-card {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;

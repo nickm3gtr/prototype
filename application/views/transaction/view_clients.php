@@ -19,7 +19,7 @@
 									<tbody>
 									<?php foreach($clients as $client): ?>
 										<tr>
-											<td><a href="<?php echo site_url('transactions/view_transactions/' . $client['customerID']); ?>"><?php echo $client['name']; ?></a></td>
+											<td><a href="<?php echo site_url('transactions/user_transactions/' . $client['customerID']); ?>"><?php echo $client['name']; ?></a></td>
 											<td><?php echo $client['cust_email']; ?></td>
 										</tr>
 									<?php endforeach; ?>

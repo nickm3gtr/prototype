@@ -5,8 +5,8 @@
 				<div class="col-lg-9 offset-md-2">
                     <div class="card">
                     	<div class="card-header">
-                    		<strong class="card-title"><?php echo $clients['name'] . "'s " . $title; ?></strong><br><br>
-                    		<form class="form-inline" action="<?php echo base_url('index.php/transactions/filter_transactions/' . $clients['customerID']); ?>" method="post">
+                    		<strong class="card-title"><?php echo $title; ?></strong><br><br>
+                    		<form class="form-inline" action="<?php echo base_url('index.php/transactions/customer_filter_transactions/' . $customerID); ?>" method="post">
 								<div class="form-group">
 			                        <div class="col col-md-4">
 			                        	<?php $months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -48,29 +48,24 @@
 									<thead>
 										<tr>
 											<th>Date</th>
+											<th>Description</th>
 											<th>Status</th>
-											<th></th>
 										</tr>
 									</thead>
 									<tbody>
 									<?php foreach($transactions as $transaction): ?>
 										<tr>
 											<td><?php echo $transaction['transDate']; ?></td>
+											<td><?php echo $transaction['transDesc']; ?></td>
 											<?php
 												if($transaction['trans_status'] == 'not journalized') :
 											 ?>
 											<td class="text-danger"><?php echo 'not journalized'; ?></td>
-											<td class="text-right">
-												<a href="<?php echo site_url('transactions/journal_transactions/' . $transaction['transID']); ?>" class="btn btn-danger">Input</a>
-											</td>
 											<?php endif; ?>
 											<?php
 												if($transaction['trans_status'] == 'journalized') :
 											 ?>
 											<td class="text-success"><?php echo $transaction['trans_status']; ?></td>
-											<td class="text-right">
-												<a href="#" class="btn btn-success">Edit  </a>
-											</td>
 											<?php endif; ?>
 										</tr>
 									<?php endforeach; ?>

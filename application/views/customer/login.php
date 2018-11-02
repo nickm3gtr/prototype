@@ -74,7 +74,7 @@
                             <div class="register-link">
                                 <p>
                                     Don't have an account?
-                                    <a class="text-success" href="<?php echo base_url(); ?>index.php/customer/register">Sign Up Here</a>
+                                    <a class="text-success" href="<?php echo base_url(); ?>index.php/customers/register">Sign Up Here</a>
                                 </p>
                             </div>
                         </div>

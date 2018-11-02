@@ -31,7 +31,7 @@
 										</tr>
 											<tr>
 											<td><?php echo $credits['date']; ?></td>
-											<td class="text-right"><?php echo $credits['acct_name']; ?></td>
+											<td><?php echo $credits['acct_name']; ?></td>
 											<td></td>
 											<td class="text-right"><?php echo $credits['amount']; ?></td>
 										</tr>

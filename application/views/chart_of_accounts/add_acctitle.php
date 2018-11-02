@@ -18,17 +18,13 @@
 				                            </select>   
 					                </div>
 					                <div class="form-group">
-					                    <label class=" form-control-label">Account Code</label>
-					                    <input type="text" id="nf-email" name="account_code" placeholder="Enter account code" class="form-control">
-					                </div>
-					                <div class="form-group">
 					                    <label class=" form-control-label">Account title</label>
 					                    <input type="text" id="nf-email" name="account_title" placeholder="Enter new account title" class="form-control">
 					                </div>   
 					        </div>
 					        <div class="card-footer">
 					            <button type="submit" class="btn btn-success btn-sm">
-					                <i class="fa fa-dot-circle-o"></i> Submit
+					                <i class="fa fa-check"></i> Submit
 					            </button>
 					        </div>
 				        </form>

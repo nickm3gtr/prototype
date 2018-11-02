@@ -32,6 +32,7 @@
 						'email' => $this->input->post('email'),
 						'password' => md5($this->input->post('password')),
 						'gender' => $this->input->post('gender'),
+						'status' => 'active'
 
 					);
 

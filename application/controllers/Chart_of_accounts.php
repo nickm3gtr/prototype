@@ -50,7 +50,6 @@
 		public function acctitle_insert() {
 
 			$new_acctitle = array(
-				'acct_code' => $this->input->post('account_code'),
 				'acct_name' => $this->input->post('account_title'),
 				'categoryID' => $this->input->post('category')
 			);

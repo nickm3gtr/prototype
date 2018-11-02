@@ -84,9 +84,13 @@
 	          		</div>
 	          	</div>
 	          	<div class="card-footer">
-	                <button type="submit" class="btn btn-success">
-	                    <i class="fa fa-check"></i> Submit
-	                </button>
+	                <div class="row form-group">
+                     <div class="col col-md-3 offset-md-5">
+                         <button type="submit" class="btn btn-success">
+                            <i class="fa fa-check"></i> Submit
+                         </button>
+                     </div>   
+                    </div>
 	            </div>
 	        </form>
 	      	</div>
