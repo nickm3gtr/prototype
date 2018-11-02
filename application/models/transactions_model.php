@@ -73,16 +73,22 @@
 		public function get_debit($transID) {
 
 			$this->db->select('*');
-			$this->db->join('account_titles', 'account_titles.acct_id = debits.acct_id', 'inner');
-			$query = $this->db->get_where('debits', array('transID' => $transID));
+			$this->db->from('account_titles');
+			$this->db->join('debits', 'account_titles.acct_id = debits.acct_id', 'inner');
+			$this->db->join('transactions', 'debits.transID=transactions.transID');
+			$this->db->where('debits.transID', $transID);
+			$query = $this->db->get();
 			return $query->row_array();
 		}
 
 		public function get_credit($transID) {
 
 			$this->db->select('*');
-			$this->db->join('account_titles', 'account_titles.acct_id = credits.acct_id', 'inner');
-			$query = $this->db->get_where('credits', array('transID' => $transID));
+			$this->db->from('account_titles');
+			$this->db->join('credits', 'account_titles.acct_id = credits.acct_id', 'inner');
+			$this->db->join('transactions', 'credits.transID=transactions.transID');
+			$this->db->where('credits.transID', $transID);
+			$query = $this->db->get();
 			return $query->row_array();
 		}
 	}

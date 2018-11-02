@@ -38,9 +38,18 @@
 									</tbody>
 								</table>
 							</div>
-							<form action="<?php echo base_url() . 'index.php/chart_of_accounts/add_acctitle'; ?>" method="post">
-							</form>
 	                    </div>
+	                    <div class="card-footer">
+                    	<form action="<?php echo base_url('index.php/transactions/user_transactions/' . $debits['customerID']); ?>" method="post">
+                    	<div class="row form-group">
+                    		<div class="col col-md-3 offset-md-5">
+                    			<button type="submit" class="btn btn-success">
+                    				<i class="fa fa-plus"></i> Add
+                    			</button>
+                    		</div>
+                    	</div>
+                    </form>
+					</div>
 	                </div>
                 </div>
             </div>
