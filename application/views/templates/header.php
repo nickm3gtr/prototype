@@ -67,7 +67,7 @@
                     <ul class="navbar-mobile__list list-unstyled">
                         <li>
                             <a class="js-arrow" href="<?php echo base_url(); ?>index.php/dashboard/index">
-                                <i class="fas fa-desktop"></i>Dashboard</a>
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(); ?>index.php/chart_of_accounts/account_titles">
@@ -97,7 +97,7 @@
                     <ul class="list-unstyled navbar__list">
                        <li>
                             <a class="js-arrow" href="<?php echo base_url(); ?>index.php/dashboard/index">
-                                <i class="fas fa-desktop"></i>Dashboard</a>
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(); ?>index.php/chart_of_accounts/account_titles">

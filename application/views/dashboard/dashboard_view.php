@@ -9,7 +9,7 @@
                 </div>
             </div>
 	    	<div class="row m-t-25">
-	    		<div class="col-lg-4 col-lg-3">
+	    		<div class="col-sm-6 col-lg-3">
 	    			<div class="overview-item overview-item--c1">
 	    				<div class="overview__inner">
                             <div class="overview-box clearfix">
@@ -18,13 +18,12 @@
                                 </div>
                                 <div class="text">
                                     <h2><?php echo $client_count; ?></h2>
-                                    <span> registered clients</span>
+                                    <span>Clients</span>
                                 </div>
                                 <div class="overview-chart">
                                     <canvas id="widgetChart2"></canvas>
                                 </div>
                             </div>
-                            <br><br>
                         </div>
 	    			</div>
 	    		</div>

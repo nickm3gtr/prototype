@@ -68,10 +68,13 @@
                     <ul class="navbar-mobile__list list-unstyled">
                         <li>
                             <a class="js-arrow" href="<?php echo base_url(); ?>index.php/dashboard/index">
-                                <i class="fas fa-desktop"></i>Dashboard</a>
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(); ?>index.php/transactions/view_transaction/<?php echo $customerID; ?>" class="js-arrow"><i class="fas fa-credit-card"></i>Transactions</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>index.php/journals/journal_view/<?php echo $customerID; ?>" class="js-arrow"><i class="fas fa-book"></i>Journal</a>
                         </li>
                     </ul>
                 </div>
@@ -91,10 +94,13 @@
                     <ul class="list-unstyled navbar__list">
                        <li>
                             <a class="js-arrow" href="<?php echo base_url(); ?>index.php/dashboard/customer_dashboard">
-                                <i class="fas fa-desktop"></i>Dashboard</a>
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(); ?>index.php/transactions/view_transaction/<?php echo $customerID; ?>" class="js-arrow"><i class="fas fa-credit-card"></i>Transactions</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>index.php/journals/journal_view/<?php echo $customerID; ?>" class="js-arrow"><i class="fas fa-book"></i>Journal</a>
                         </li>
                     </ul>
                 </nav>
