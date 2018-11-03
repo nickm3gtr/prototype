@@ -4,7 +4,7 @@
 	    <div class="row">
 	      <div class="col-lg-9 offset-lg-2">
 	        <div class="card">
-	        <form action="<?php echo base_url('index.php/transactions/journal_added'); ?>" method="post">
+	        <form action="<?php echo base_url('index.php/transactions/journal_added/' . $transactions['transID']); ?>" method="post">
 	          <div class="card-header">
 	            <h4><?php echo $title; ?></h4>
 	          </div>
@@ -46,6 +46,9 @@
                             <div class="col-12 col-md-9">
                                 <input type="text" id="text-input" name="debit_amount" placeholder="Enter amount" class="form-control">
                             </div>
+                            <div class="span12 text-center">
+                                <span class="text-danger"><?php echo form_error('debit_amount'); ?></span>
+                            </div>
                         </div>
                         <br>
                         <strong class="text-center">Credit</strong>
@@ -77,8 +80,12 @@
                             <div class="col-12 col-md-9">
                                 <input type="text" id="text-input" name="credit_amount" placeholder="Enter amount" class="form-control">
                             </div>
+                            <div class="span12 text-center">
+                                <span class="text-danger"><?php echo form_error('credit_amount'); ?></span>
+                            </div>
                         </div>
                         <div class="span12 text-center">
+                            <span class="text-danger"><?php echo $this->session->flashdata('error_journal'); ?></span>
                         	<span class="text-danger text-align: center"><?php echo $this->session->flashdata('unbalanced'); ?></span>
 			          	</div>
 	          		</div>

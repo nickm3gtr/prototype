@@ -174,20 +174,20 @@
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
                                                 <div class="image">
-                                                    <a href="<?php echo base_url() . 'index.php/customers/profile_view'; ?>">
+                                                    <a href="<?php echo base_url() . 'index.php/customers/profile_view/' . $this->session->userdata('customerID'); ?>">
                                                         <img src="<?php echo base_url(); ?>assets/images/icon/<?php echo strtolower($this->session->userdata('cust_gender')) . '-unknown-avatar.jpg'; ?>" alt="<?php echo $this->session->userdata('cust_fname') . ' ' . $this->session->userdata('cust_lname'); ?>" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="<?php echo base_url() . 'index.php/customers/profile_view'; ?>"><?php echo $this->session->userdata('cust_fname') . ' ' . $this->session->userdata('cust_lname'); ?></a>
+                                                        <a href="<?php echo base_url() . 'index.php/customers/profile_view/' . $this->session->userdata('customerID'); ?>"><?php echo $this->session->userdata('cust_fname') . ' ' . $this->session->userdata('cust_lname'); ?></a>
                                                     </h5>
                                                     <span class="email"><?php echo $this->session->userdata('cust_email'); ?></span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="<?php echo base_url() . 'index.php/customers/profile_view'; ?>">
+                                                    <a href="<?php echo base_url() . 'index.php/customers/profile_view/' . $this->session->userdata('customerID'); ?>">
                                                         <i class="zmdi zmdi-account"></i>Account</a>
                                                 </div>
                                             </div>

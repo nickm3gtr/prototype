@@ -14,7 +14,7 @@
                         <div class="location text-sm-center">                    
                             <i class="fa fa-<?php echo strtolower($profile['cust_gender']); ?>"></i> <?php echo $profile['cust_gender']; ?></div><br>
                         </div>                
-                        <hr>
+
                 </div>
             </div>
 		</div>

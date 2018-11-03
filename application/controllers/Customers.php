@@ -86,6 +86,17 @@
 			}
 		}
 
+		public function profile_view($customerID = NULL) {
+
+			$data['clients'] = $this->clients_model->get_client($customerID);
+			$data['title'] = "Profile";
+			$data['profile'] = $this->clients_model->profile_select($customerID);
+
+			$this->load->view('templates/cust_header', $data);
+			$this->load->view('client/client_profile', $data);
+			$this->load->view('templates/footer');
+		}
+
 		public function logout() {
 
 			$this->session->unset_userdata('cust_email');

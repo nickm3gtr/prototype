@@ -158,33 +158,64 @@
 			$this->load->view('templates/footer');
 		}
 
-		public function journal_added() {
+		public function journal_added($transID = NULL) {
 
-			$debit = array(
-				'transID' => $this->input->post('debit_transID'),
-				'user_id' => $this->input->post('debit_userID'),
-				'acct_id' => $this->input->post('debit_account_titles'),
-				'amount' => $this->input->post('debit_amount'),
-				'date' => $this->input->post('debit_date')
-			);
+			$null_accountTitle = $this->input->post('debit_account_titles');
 
-			$credit = array(
-				'transID' => $this->input->post('credit_transID'),
-				'user_id' => $this->input->post('credit_userID'),
-				'acct_id' => $this->input->post('credit_account_titles'),
-				'amount' => $this->input->post('credit_amount'),
-				'date' => $this->input->post('credit_date')
-			);
+			if($null_accountTitle != 0) {
 
-			if($debit['amount'] != $credit['amount']) {
+				$this->form_validation->set_rules('debit_amount', 'Debit amount', 'required|integer');
+				$this->form_validation->set_rules('credit_amount', 'Credit amount', 'required|integer');
 
-				$this->session->set_flashdata('unbalanced', 'Unbalanced debit and credit!');
-				redirect('transactions/journal_transactions/' . $debit['transID'], 'refresh');
+				if($this->form_validation->run()) {
+
+					$debit = array(
+					'transID' => $this->input->post('debit_transID'),
+					'user_id' => $this->input->post('debit_userID'),
+					'acct_id' => $this->input->post('debit_account_titles'),
+					'amount' => $this->input->post('debit_amount'),
+					'date' => $this->input->post('debit_date')
+					);
+
+					$credit = array(
+					'transID' => $this->input->post('credit_transID'),
+					'user_id' => $this->input->post('credit_userID'),
+					'acct_id' => $this->input->post('credit_account_titles'),
+					'amount' => $this->input->post('credit_amount'),
+					'date' => $this->input->post('credit_date')
+					);
+
+					if($debit['amount'] != $credit['amount']) {
+
+						$this->session->set_flashdata('unbalanced', 'Unbalanced debit and credit!');
+						redirect('transactions/journal_transactions/' . $debit['transID'], 'refresh');
+					} else {
+						$transID=$debit['transID'];
+						$this->transactions_model->update_status($transID);
+						$this->transactions_model->add_journal($debit, $credit);
+						redirect('transactions/journal_result/' . $debit['transID']);
+					}
+
+				} else {
+
+					$data['title'] = "Add journal";
+					$data['account_titles'] = $this->transactions_model->account_titles();
+					$data['transactions'] = $this->transactions_model->get_transaction($transID);
+
+					$this->load->view('templates/header', $data);
+					$this->load->view('transaction/input_journal', $data);
+					$this->load->view('templates/footer');
+				} 
 			} else {
-				$transID=$debit['transID'];
-				$this->transactions_model->update_status($transID);
-				$this->transactions_model->add_journal($debit, $credit);
-				redirect('transactions/journal_result/' . $debit['transID']);
+				$this->session->set_flashdata('error_journal', 'Please select account title.');
+
+				$data['title'] = "Add journal";
+				$data['account_titles'] = $this->transactions_model->account_titles();
+				$data['transactions'] = $this->transactions_model->get_transaction($transID);
+
+				$this->load->view('templates/header', $data);
+				$this->load->view('transaction/input_journal', $data);
+				$this->load->view('templates/footer');
 			}
 		}
 
