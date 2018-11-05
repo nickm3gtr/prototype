@@ -54,9 +54,21 @@
 			$data['customerID'] = $customerID;
 			$data['transactions'] = $this->transactions_model->trans_select($customerID);
 
+			if(empty($data['transactions'])) {
+
+				$data['title'] = 'Your transactions';
+				$data['customerID'] = $customerID;
+				$data['transactions'] = $this->transactions_model->trans_select($customerID);
+
+				$this->load->view('templates/cust_header', $data);
+				$this->load->view('transaction/customer_emptyTransactions', $data);
+				$this->load->view('templates/footer');
+			} else {
+
 				$this->load->view('templates/cust_header', $data);
 				$this->load->view('transaction/customer_transactions', $data);
 				$this->load->view('templates/footer');
+			}
 		}
 
 		public function customer_filter_transactions($customerID = NULL) {
@@ -78,7 +90,7 @@
 				$data['transactions'] = $this->transactions_model->trans_select($customerID);
 
 				$this->load->view('templates/cust_header', $data);
-				$this->load->view('transaction/customer_empty', $data);
+				$this->load->view('transaction/customer_emptyTransactions', $data);
 				$this->load->view('templates/footer');
 			} else {
 

@@ -42,8 +42,19 @@
                 			</form>
                     	</div>
                     	<div class="card-body">
-                    		<p>No result</p>
+                    		<p>No transactions.</p>
                         </div>
+                        <div class="card-footer">
+                    	<form action="<?php echo base_url('index.php/transactions/add_transaction/' . $customerID); ?>" method="post">
+                    	<div class="row form-group">
+                    		<div class="col col-md-3 offset-md-5">
+                    			<button type="submit" class="btn btn-success">
+                    				<i class="fa fa-plus"></i> Add
+                    			</button>
+                    		</div>
+                    	</div>
+                    </form>
+					</div>
                     </div>
                 </div>
             </div>

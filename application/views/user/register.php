@@ -60,12 +60,12 @@
                             <form action="<?php echo base_url('index.php/users/signup_validation'); ?>" method="post">
                                 <div class="form-group">
                                     <label>First Name</label>
-                                    <input class="au-input au-input--full" type="text" name="firstname" placeholder="Username">
+                                    <input class="au-input au-input--full" type="text" name="firstname" placeholder="First Name">
                                     <span class="text-danger"><?php echo form_error('firstname'); ?></span>
                                 </div>
                                 <div class="form-group">
                                     <label>Last Name</label>
-                                    <input class="au-input au-input--full" type="text" name="lastname" placeholder="Username">
+                                    <input class="au-input au-input--full" type="text" name="lastname" placeholder="Last Name">
                                     <span class="text-danger"><?php echo form_error('lastname'); ?></span>
                                 </div>
                                 <div class="form-group">

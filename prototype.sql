@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 02, 2018 at 02:14 PM
+-- Generation Time: Nov 05, 2018 at 09:03 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -55,7 +55,8 @@ INSERT INTO `account_titles` (`acct_id`, `acct_name`, `categoryID`) VALUES
 (16, 'Supplies Expense', 5),
 (17, 'Advertising Expense', 5),
 (18, 'Interest Expense', 5),
-(19, 'Office Equipment', 1);
+(19, 'Office Equipment', 1),
+(20, 'Accounts Receivable', 1);
 
 -- --------------------------------------------------------
 
@@ -99,15 +100,14 @@ CREATE TABLE `credits` (
 --
 
 INSERT INTO `credits` (`creditID`, `transID`, `user_id`, `acct_id`, `amount`, `date`) VALUES
-(2, 9, 1, 1, '25000.00', '2018-11-02'),
-(3, 10, 1, 1, '25000.00', '2018-11-02'),
-(8, 11, 1, 1, '20000.00', '2018-11-02'),
-(9, 12, 1, 1, '20000.00', '2018-11-02'),
-(10, 18, 1, 9, '100000.00', '2018-02-15'),
-(11, 19, 1, 1, '4000.00', '2018-02-17'),
-(12, 20, 1, 11, '12000.00', '2018-02-19'),
-(13, 21, 1, 1, '5000.00', '2018-02-22'),
-(14, 22, 1, 1, '40000.00', '2018-11-02');
+(17, 23, 2, 9, '150000.00', '2018-01-01'),
+(18, 24, 2, 1, '7500.00', '2018-01-03'),
+(19, 25, 2, 1, '26000.00', '2018-01-04'),
+(20, 26, 2, 12, '10500.00', '2018-01-05'),
+(21, 27, 2, 1, '55000.00', '2018-01-06'),
+(22, 28, 2, 1, '39500.00', '2018-01-12'),
+(23, 29, 2, 20, '7000.00', '2018-01-15'),
+(24, 30, 2, 1, '8000.00', '2018-01-18');
 
 -- --------------------------------------------------------
 
@@ -129,8 +129,7 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`customerID`, `cust_fname`, `cust_lname`, `cust_email`, `cust_password`, `cust_gender`) VALUES
-(1, 'Michael', 'Jjisdfhdfs', 'mj@gmail.com', '202cb962ac59075b964b07152d234b70', 'Male'),
-(2, 'Abbxsds', 'Bhskfjh', 'ab@gmail.com', '202cb962ac59075b964b07152d234b70', 'Male');
+(3, 'Client1', 'Test', 'client1@test.com', '202cb962ac59075b964b07152d234b70', 'Male');
 
 -- --------------------------------------------------------
 
@@ -152,15 +151,14 @@ CREATE TABLE `debits` (
 --
 
 INSERT INTO `debits` (`debitID`, `transID`, `user_id`, `acct_id`, `amount`, `date`) VALUES
-(2, 9, 1, 19, '25000.00', '2018-11-02'),
-(3, 10, 1, 19, '25000.00', '2018-11-02'),
-(8, 11, 1, 19, '20000.00', '2018-11-02'),
-(9, 12, 1, 19, '20000.00', '2018-11-02'),
-(10, 18, 1, 1, '100000.00', '2018-02-15'),
-(11, 19, 1, 19, '4000.00', '2018-02-17'),
-(12, 20, 1, 1, '12000.00', '2018-02-19'),
-(13, 21, 1, 15, '5000.00', '2018-02-22'),
-(14, 22, 1, 14, '40000.00', '2018-11-02');
+(18, 23, 2, 1, '150000.00', '2018-01-01'),
+(19, 24, 2, 13, '7500.00', '2018-01-03'),
+(20, 25, 2, 19, '26000.00', '2018-01-04'),
+(21, 26, 2, 1, '10500.00', '2018-01-05'),
+(22, 27, 2, 19, '55000.00', '2018-01-06'),
+(23, 28, 2, 19, '39500.00', '2018-01-12'),
+(24, 29, 2, 1, '7000.00', '2018-01-15'),
+(25, 30, 2, 19, '8000.00', '2018-01-18');
 
 -- --------------------------------------------------------
 
@@ -182,20 +180,14 @@ CREATE TABLE `transactions` (
 --
 
 INSERT INTO `transactions` (`transID`, `customerID`, `transDesc`, `transAmount`, `transDate`, `trans_status`) VALUES
-(9, 1, 'Bought computer', '25000.00', '2018-11-02', 'journalized'),
-(10, 1, 'Bought computer', '25000.00', '2018-11-02', 'journalized'),
-(11, 1, 'Bought tv', '20000.00', '2018-11-02', 'journalized'),
-(12, 1, 'Bought tv', '20000.00', '2018-11-02', 'journalized'),
-(13, 1, 'Bought tv', '20000.00', '2018-11-02', 'not journalized'),
-(14, 1, 'Bought tv', '20000.00', '2018-11-02', 'not journalized'),
-(15, 1, 'Bought tv', '20000.00', '0000-00-00', 'not journalized'),
-(16, 1, 'asdasds', '1200.00', '2018-11-02', 'not journalized'),
-(17, 1, 'Capital', '100000.00', '2018-01-01', 'not journalized'),
-(18, 2, 'Initial investment', '100000.00', '2018-02-15', 'journalized'),
-(19, 2, 'Bought office chairs', '4000.00', '2018-02-17', 'journalized'),
-(20, 2, 'Sales income', '12000.00', '2018-02-19', 'journalized'),
-(21, 2, 'Paid electric bill', '5000.00', '2018-02-22', 'journalized'),
-(22, 2, 'Paid salaries', '40000.00', '2018-11-02', 'journalized');
+(23, 3, 'Invested cash to start business', '150000.00', '2018-01-01', 'journalized'),
+(24, 3, 'Paid one month rent', '7500.00', '2018-01-03', 'journalized'),
+(25, 3, 'Bought office furniture', '26000.00', '2018-01-04', 'journalized'),
+(26, 3, 'Performed services paid in cash', '10500.00', '2018-01-05', 'journalized'),
+(27, 3, 'Bought desktop computer', '55000.00', '2018-01-06', 'journalized'),
+(28, 3, 'Bought personal copier', '39500.00', '2018-01-12', 'journalized'),
+(29, 3, 'Received cash from credit clients', '7000.00', '2018-01-15', 'journalized'),
+(30, 3, 'Bought additional office chairs', '8000.00', '2018-01-18', 'journalized');
 
 -- --------------------------------------------------------
 
@@ -218,7 +210,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `email`, `password`, `gender`, `status`) VALUES
-(1, 'Nick', 'Lobaton', 'nickm3gtr@gmail.com', '202cb962ac59075b964b07152d234b70', 'Male', 'active');
+(2, 'Bookkeeper1', 'Test', 'bookkeeper1@test.com', '202cb962ac59075b964b07152d234b70', 'Male', 'active');
 
 --
 -- Indexes for dumped tables
@@ -284,7 +276,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `account_titles`
 --
 ALTER TABLE `account_titles`
-  MODIFY `acct_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `acct_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `categories`
 --
@@ -294,27 +286,27 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `credits`
 --
 ALTER TABLE `credits`
-  MODIFY `creditID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `creditID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `customerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `debits`
 --
 ALTER TABLE `debits`
-  MODIFY `debitID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `debitID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `transID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `transID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
