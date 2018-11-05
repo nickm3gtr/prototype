@@ -36,7 +36,54 @@
 			$this->db->where('transdate <=', $date2);
 			$query = $this->db->get();
 			return $query->result_array();
+		}
 
-			if($query)
+		public function insert_transaction($transaction) {
+
+			$this->db->insert('transactions', $transaction);
+		}
+
+		public function account_titles() {
+
+			$this->db->select('*');
+			$this->db->from('account_titles');
+			$this->db->join('categories', 'categories.categoryID = account_titles.categoryID', 'inner');
+			$this->db->order_by('account_titles.categoryID, account_titles.acct_name');
+			$query = $this->db->get();
+
+			return $query->result_array();
+		}
+
+		public function get_transaction($transID) {
+
+			$query = $this->db->get_where('transactions', array('transID' => $transID));
+			return $query->row_array();
+		}
+
+		public function update_status($transID) {
+
+			$this->db->set('trans_status', 'journalized');
+			$this->db->where('transID', $transID);
+			$this->db->update('transactions');
+		}
+
+		public function add_journal($debit, $credit) {
+
+			$this->db->insert('debits', $debit);
+			$this->db->insert('credits', $credit);
+		}
+
+		public function get_debit($transID) {
+
+			$query = $this->db->query("SELECT * FROM  account_titles INNER JOIN debits ON account_titles.acct_id=debits.acct_id INNER JOIN transactions on debits.transID=transactions.transID WHERE debits.transID='" .$transID ."'");
+
+			return $query->row_array();
+		}
+
+		public function get_credit($transID) {
+
+			$query = $this->db->query("SELECT * FROM  account_titles INNER JOIN credits ON account_titles.acct_id=credits.acct_id INNER JOIN transactions on credits.transID=transactions.transID WHERE credits.transID='" .$transID ."'");
+
+			return $query->row_array();
 		}
 	}

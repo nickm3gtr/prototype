@@ -17,7 +17,13 @@
 			$account_id = $this->input->post('account_titles');
 			$year = $this->input->post('year');
 			$month = $this->input->post('months');
-			$data['debit_ledgers'] = $this->ledger_model->get_ledger($customerID, $account_id, $year, $month);
-			print_r($data['debit_ledgers']);
+			$data['title'] = "Ledger";
+
+			$data['debits'] = $this->ledger_model->get_debitLedger($customerID, $account_id, $year, $month);
+			$data['credits'] = $this->ledger_model->get_creditLedger($customerID, $account_id, $year, $month);
+			
+			$this->load->view('templates/cust_header', $data);
+			$this->load->view('ledger/ledger_result', $data);
+			$this->load->view('templates/footer');
 		}
 	}
